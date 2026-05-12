@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3a7bd5">
+    <title>Markdown Editor with Live Preview</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- Week 2: Frontend: HTML Structure for Editor and Preview -->
+    <header>
+        <div class="brand">
+            <h1>Markdown Editor</h1>
+            <p>Write Markdown and preview HTML instantly.</p>
+        </div>
+        <div class="controls">
+            <button id="export-html" type="button">Export HTML</button>
+            <button id="clear" type="button">Clear</button>
+            <label class="toggle-label">
+                <input type="checkbox" id="dark-mode">
+                Dark Mode
+            </label>
+        </div>
+    </header>
+    <main class="container">
+        <section class="editor-pane">
+            <div class="toolbar" aria-label="Markdown toolbar">
+                <button type="button" data-md="**bold**" title="Bold">B</button>
+                <button type="button" data-md="*italic*" title="Italic">I</button>
+                <button type="button" data-md="`code`" title="Inline code">`</button>
+                <button type="button" data-md="# Header" title="Heading">H</button>
+                <button type="button" data-md="- List item" title="List">•</button>
+                <button type="button" data-md="1. Numbered list" title="Numbered list">1.</button>
+                <button type="button" data-md="[Link](https://example.com)" title="Link">🔗</button>
+                <button type="button" data-md="![Alt](https://example.com/image.png)" title="Image">🖼️</button>
+                <button type="button" data-md="```python\nprint(\"Hello, world!\")\n```" title="Code block">```</button>
+                <button type="button" data-md="| Header | Header |\n| --- | --- |\n| Cell | Cell |" title="Table">📊</button>
+            </div>
+            <textarea id="markdown-input" placeholder="Enter your Markdown here..."></textarea>
+            <div class="stats">
+                <span id="word-count">Words: 0</span>
+                <span id="char-count">Characters: 0</span>
+            </div>
+        </section>
+        <section class="preview-pane">
+            <div id="preview" class="preview-content">
+                <p class="placeholder">Start typing Markdown to see the live preview.</p>
+            </div>
+        </section>
+    </main>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

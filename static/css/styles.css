@@ -1,0 +1,239 @@
+/* Week 6: Styling and UI Enhancements */
+:root {
+    color-scheme: light;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fb;
+    color: #111827;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background-color: #f5f7fb;
+    color: #111827;
+}
+
+body.dark-mode {
+    background-color: #10121a;
+    color: #e5e7eb;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    color: white;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.brand p {
+    margin: 0.4rem 0 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+button, .toggle-label {
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+button {
+    background-color: white;
+    color: #1f2937;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+button:hover, .toolbar button:hover, .toggle-label:hover {
+    transform: translateY(-1px);
+}
+
+button:hover {
+    background-color: #eef2ff;
+}
+
+.toggle-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+}
+
+.toggle-label input {
+    width: 18px;
+    height: 18px;
+}
+
+.container {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5rem 1.5rem;
+    min-height: calc(100vh - 100px);
+}
+
+.editor-pane,
+.preview-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.editor-pane {
+    min-width: 320px;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.toolbar button {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    min-width: 44px;
+    border-radius: 10px;
+}
+
+#markdown-input {
+    flex: 1;
+    width: 100%;
+    min-height: 340px;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 1px solid #cbd5e1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: white;
+    color: #111827;
+    resize: vertical;
+}
+
+body.dark-mode #markdown-input {
+    background-color: #161822;
+    color: #e5e7eb;
+    border-color: #2f333f;
+}
+
+.preview-pane {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #cbd5e1;
+    padding: 1.2rem;
+    overflow: auto;
+    min-height: 340px;
+}
+
+body.dark-mode .preview-pane {
+    background-color: #161822;
+    border-color: #2f333f;
+}
+
+.preview-pane h1,
+.preview-pane h2,
+.preview-pane h3,
+.preview-pane h4,
+.preview-pane h5,
+.preview-pane h6 {
+    margin-top: 1.5rem;
+}
+
+.preview-pane pre,
+.preview-pane code {
+    background: #f8fafc;
+    color: #111827;
+    border-radius: 14px;
+    padding: 0.9rem;
+}
+
+body.dark-mode .preview-pane pre,
+body.dark-mode .preview-pane code {
+    background: #1f2530;
+    color: #f8fafc;
+}
+
+.preview-pane table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.preview-pane th,
+.preview-pane td {
+    padding: 0.9rem;
+    border: 1px solid #d1d5db;
+}
+
+.preview-pane th {
+    background: #f1f5f9;
+}
+
+body.dark-mode .preview-pane th {
+    background: #232a36;
+}
+
+body.dark-mode .preview-pane th,
+body.dark-mode .preview-pane td {
+    border-color: #3b4253;
+}
+
+.placeholder {
+    color: #64748b;
+    font-style: italic;
+}
+
+.error {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 960px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        padding: 1rem;
+    }
+
+    .controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
